@@ -14,17 +14,17 @@ const Scene = () => {
         x: {
             value: 0,
 
-            min: 0,
+            min: -10,
             max: 10
         },
         y: {
             value: 0,
-            min: 0,
+            min: -10,
             max: 10
         },
         z: {
             value: 0,
-            min: 0,
+            min: -10,
             max: 10
         }
     });
