@@ -15,17 +15,20 @@ const Scene = () => {
             value: 0,
 
             min: -10,
-            max: 10
+            max: 10,
+            label: "Horizontal position"
         },
         y: {
             value: 0,
             min: -10,
-            max: 10
+            max: 10,
+            label: "Vertical position"
         },
         z: {
             value: 0,
             min: -10,
-            max: 10
+            max: 10,
+            label: "Depth position"
         }
     });
 
@@ -33,17 +36,20 @@ const Scene = () => {
         x: {
             value: 1,
             min: 0,
-            max: 10
+            max: 10,
+            label: "Width"
         },
         y: {
             value: 1,
             min: 0,
-            max: 10
+            max: 10,
+            label: "Height"
         },
         z: {
             value: 1,
             min: 0,
-            max: 10
+            max: 10,
+            label: "Depth"
         }
     });
 
