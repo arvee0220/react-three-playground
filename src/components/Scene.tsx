@@ -55,7 +55,7 @@ const Scene = () => {
 
     useFrame(() => {
         if (lightRef.current) {
-            const helper = new THREE.PointLightHelper(lightRef.current, 2);
+            const helper = new THREE.PointLightHelper(lightRef.current, 1);
             scene.add(helper);
 
             return () => {
