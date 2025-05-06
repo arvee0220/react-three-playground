@@ -3,8 +3,10 @@
 import { Environment, OrbitControls } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { useControls } from "leva";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 import * as THREE from "three";
+import BoxModel from "./models/BoxModel";
+import SpearOfAdun from "./models/SpearOfAdun";
 
 const Scene = () => {
     const lightRef = useRef<THREE.PointLight>(null);
@@ -68,14 +70,15 @@ const Scene = () => {
     return (
         <>
             <OrbitControls />
+            <ambientLight intensity={3}/>
             <pointLight position={[0, 0, 10]} intensity={10} ref={lightRef} />
-            <axesHelper scale={3} />
+            {/* <axesHelper scale={3} /> */}
 
             {/* Object  */}
-            <mesh position={[position.x, position.y, position.z]}>
-                <boxGeometry args={[size.x, size.y, size.z]} />
-                <meshPhysicalMaterial roughness={0} side={2} metalness={0.2} color={"gray"} />
-            </mesh>
+            <Suspense fallback={null}>
+            <BoxModel position={position} size={size}/>
+            <SpearOfAdun/>
+            </Suspense>
 
             {/* Background */}
             <Environment files="/background/night-sky.exr" background frames={Infinity} />
